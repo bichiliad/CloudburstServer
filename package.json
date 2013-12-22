@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "express": "latest",
-    "hjs": "latest"
+    "express-hbs": "latest",
+    "passport-soundcloud": "latest"
   },
   "devDependencies": {
     "nodemon": "latest"
