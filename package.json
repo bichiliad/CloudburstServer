@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "express": "latest",
-    "ejs":     "latest"
+    "hjs": "latest"
   },
   "devDependencies": {
     "nodemon": "latest"
