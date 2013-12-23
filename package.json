@@ -20,6 +20,10 @@
     "passport-soundcloud": "latest"
   },
   "devDependencies": {
-    "nodemon": "latest"
+    "nodemon": "latest",
+    "karma": "latest",
+    "mocha": "latest",
+    "should": "latest",
+    "supertest": "latest"
   }
 }
