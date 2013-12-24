@@ -18,7 +18,6 @@
   "dependencies": {
     "express": "latest",
     "express-hbs": "latest",
-    "passport": "latest",
     "passport-soundcloud": "latest"
   },
   "devDependencies": {
