@@ -9,10 +9,12 @@
     "type": "git",
     "url": "https://github.com/bichiliad/CloudburstServer.git"
   },
+
   "scripts": {
     "start": "NODE_ENV=development ./node_modules/.bin/nodemon server.js",
-      "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec test/test-*.js"
+    "test":  "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec test/test-*.js"
   },
+
   "dependencies": {
     "express": "latest",
     "express-hbs": "latest",
