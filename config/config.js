@@ -6,12 +6,14 @@ module.exports = {
 	// Development environment config
 	development: {
 		port: 3000,
-		root: rootPath
+		root: rootPath,
+    db: 'mongodb://localhost/cloudburst'
 	},
 
 	// Test environment config
 	test: {
 		port: 3000,
-		root: rootPath
+		root: rootPath,
+    db: 'mongodb://localhost/cloudburst'
 	}
 };

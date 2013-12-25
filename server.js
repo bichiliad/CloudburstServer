@@ -2,16 +2,33 @@
 
 // Imports
 var express = require('express')
-  , passport = require('passport');
+  , passport = require('passport')
+  , mongoose = require('mongoose');
 
 // Other useful globals
 var env = process.env.NODE_ENV || 'development'
   , config = require('./config/config')[env];
 
+// Get some API keys. Be nice and make sure they made their own keys file.
+var keys;
+  try { 
+    keys = require('./config/keys');
+  } 
+  catch (err) {
+    if(err.code === 'MODULE_NOT_FOUND'){
+      console.error("\n\nMake sure you've created config/keys.js\n", err, "\n\n");
+      return;
+    } 
+    else throw err;
+  }
+
 // Express
 console.log('===   Configuring Express   ===');
 var app = express();
 require('./config/express')(app, config);
+
+// Mongo! Yeah!
+mongoose.connect(config.db);
 
 // Routes
 console.log('===   Configuring Routes    ===');

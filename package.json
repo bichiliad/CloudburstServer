@@ -18,7 +18,9 @@
   "dependencies": {
     "express": "latest",
     "express-hbs": "latest",
-    "passport-soundcloud": "latest"
+    "passport": "latest",
+    "passport-soundcloud": "latest",
+    "mongoose": "latest"
   },
   "devDependencies": {
     "nodemon": "latest",
