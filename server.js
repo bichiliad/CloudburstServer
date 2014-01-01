@@ -11,36 +11,32 @@ var env = process.env.NODE_ENV || 'development'
 
 // Get some API keys. Be nice and make sure they made their own keys file.
 var keys;
-  try { 
+  try {
     keys = require('./config/keys');
-  } 
+  }
   catch (err) {
     if(err.code === 'MODULE_NOT_FOUND'){
       console.error("\n\nMake sure you've created config/keys.js\n", err, "\n\n");
       return;
-    } 
+    }
     else throw err;
   }
 
 // Express
 console.log('===   Configuring Express   ===');
 var app = express();
-require('./config/express')(app, config);
+require('./config/express')(app, config, passport);
 
 // Mongo! Yeah!
 mongoose.connect(config.db);
 
-// Routes
-console.log('===   Configuring Routes    ===');
-require('./config/routes')(app);
-
-// Templating
-console.log('===   Configuring Templates ===');
-require('./config/hbs.js')(app, config);
-
 // Passport
 console.log('===   Configuring Passport  ===');
-// require('./config/passport.js')
+require('./config/passport.js')(passport, keys);
+
+// Routes
+console.log('===   Configuring Routes    ===');
+require('./config/routes')(app, passport);
 
 // Start the app by listening on <port>
 var port = process.env.PORT || config.port || 3000;
